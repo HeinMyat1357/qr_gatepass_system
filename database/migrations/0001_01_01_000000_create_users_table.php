@@ -10,24 +10,22 @@ return new class extends Migration
      * Run the migrations.
      */
     public function up(): void
-    {
-        Schema::create('users', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-             $table->string('phone_number')->nullable();
-             $table->unsignedBigInteger('user_type_id')->nullable(); // FK to user_types table
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            //  $table->string('permanent_qr_code')->nullable()->unique();
-            //  $table->string('qr_token')->nullable();
-            $table->string('qr_code_path')->nullable();
-            $table->string('profile_image')->nullable();
-            $table->rememberToken();
-            $table->timestamps();
-            $table->string('verified');
-
-        });
+{
+    Schema::create('users', function (Blueprint $table) {
+        $table->id();
+        $table->string('name');
+        $table->string('user_name')->unique();
+        $table->string('phone_number');
+        $table->integer('role_id');
+        $table->string('emp_id')->nullable();
+        $table->string('email')->unique();
+        $table->string('password');
+        $table->string('qr_code_path')->nullable();
+        $table->string('profile_image')->nullable();
+        $table->string('nrc_number')->nullable();
+        $table->enum('verfied', ['0', '1'])->default('0');
+        $table->timestamps();
+    });
 
         Schema::create('password_reset_tokens', function (Blueprint $table) {
             $table->string('email')->primary();
