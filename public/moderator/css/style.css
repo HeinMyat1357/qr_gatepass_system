@@ -1,0 +1,215 @@
+/* Custom styling for QR-Based Attendance System */
+
+/* Global styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Make footer stick to bottom */
+footer {
+    margin-top: auto;
+}
+
+/* Card styling */
+.card {
+    border-radius: 0.5rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* Stat cards on dashboard */
+.stat-card {
+    border-radius: 0.5rem;
+    height: 100%;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* Step numbers in how it works section */
+.step-number {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+/* Feature icons on homepage */
+.feature-icon {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* QR Code styling */
+.qrcode-container {
+    padding: 1rem;
+    background-color: white;
+    border-radius: 0.5rem;
+    max-width: 300px;
+    margin: 0 auto;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+#user-qrcode img, #visitor-qr-code img {
+    margin: 0 auto;
+}
+
+/* Profile image overlay for upload */
+.profile-image-container {
+    display: inline-block;
+    position: relative;
+}
+
+.profile-image-overlay {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(255,255,255,0.8);
+    border-radius: 50%;
+    padding: 5px;
+    margin: 5px;
+    transition: all 0.3s;
+}
+
+.profile-image-container:hover .profile-image-overlay {
+    background-color: rgba(255,255,255,1);
+}
+
+/* Video container for QR scanning */
+.video-container {
+    position: relative;
+    width: 100%;
+    background-color: #f8f9fa;
+    border-radius: 0.5rem;
+}
+
+.video-container video {
+    border-radius: 0.5rem;
+    background-color: #000;
+}
+
+/* Active navigation link */
+.nav-link.active {
+    font-weight: 600;
+    position: relative;
+}
+
+.nav-link.active:after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0.5rem;
+    right: 0.5rem;
+    height: 3px;
+    background-color: rgba(255,255,255,0.7);
+    border-radius: 3px;
+}
+
+/* Visitor QR code section */
+.visitor-qr-content {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.select-visitor-prompt {
+    padding: 2rem;
+    color: #6c757d;
+}
+
+/* Report charts */
+#report-chart, #attendance-chart, #distribution-chart, #user-types-chart, #location-chart {
+    max-height: 300px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767.98px) {
+    .stat-number {
+        font-size: 1.8rem;
+    }
+    
+    .stat-label {
+        font-size: 0.8rem;
+    }
+    
+    .table-responsive {
+        font-size: 0.9rem;
+    }
+}
+
+/* User avatar in scan results */
+.user-avatar img {
+    border: 3px solid white;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+}
+
+/* Form control focus */
+.form-control:focus, .form-select:focus {
+    border-color: #86b7fe;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.15);
+}
+
+/* Custom badge colors */
+.badge.bg-info {
+    background-color: #0dcaf0 !important;
+}
+
+.badge.bg-warning {
+    background-color: #ffc107 !important;
+}
+
+.badge.bg-success {
+    background-color: #198754 !important;
+}
+
+.badge.bg-danger {
+    background-color: #dc3545 !important;
+}
+
+/* Pagination styling */
+.page-link {
+    color: #0d6efd;
+    border-radius: 0.25rem;
+    margin: 0 2px;
+}
+
+.page-item.active .page-link {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+}
+
+/* Button transitions */
+.btn {
+    transition: all 0.3s;
+}
+
+/* QR scan results animation */
+.scan-results:not(.d-none) {
+    animation: slideDown 0.5s ease-out;
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
